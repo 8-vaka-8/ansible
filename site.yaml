@@ -5,14 +5,14 @@
   pre_tasks:
 
   - name: install updates (CentOS)
-    tags: never
+    tags: always
     yum:
       update_only: yes
       update_cache: yes
     when: ansible_distribution == "CentOS"
 
   - name: install updates (Ubuntu)
-    tags: never
+    tags: always
     apt:
       upgrade: dist
       update_cache: yes
@@ -30,6 +30,25 @@
         - php
       state: latest
     when: ansible_distribution == "CentOS"
+
+- hosts: workstations
+  become: true
+  tasks:
+
+  - name: install unzip
+    tags: unzip
+    package:
+      name: unzip
+
+  - name: install terraform
+    tags: terra, terraform
+    unarchive:
+      src: https://releases.hashicorp.com/terraform/1.4.0/terraform_1.4.0_linux_amd64.zip
+      dest: /usr/local/bin
+      remote_src: yes
+      mode: 0755
+      owner: root
+      group: root
 
 - hosts: db_servers
   become: true
