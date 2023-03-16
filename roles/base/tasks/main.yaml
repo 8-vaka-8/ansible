@@ -1,0 +1,4 @@
+- name: add ssh key for pumba
+  authorized_key:
+    user: pumba
+    key: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDd/3Nsf8anWJzVlzTFeIEKoXXRDSDB+GPBoO8j/GJdcHbMxrpnGpi5GumnCvrKoMBaJduxx7oF98dsvQ0LVBqEMsVs7XU3/1Ypw9p++kDXVec5vX58Nej4oDXdS8BQ99hgANYh8Sr/a5rrz1e43GxKzzE9DPJ1C+yYmE9nX33P/5rO5x60mqo66TOQ/aSOsbx9dlxjE0k+MPaHt+zmslWVpRaYLDQGeHra/CRQ1avdST8MSstFQGpPKt6HYbXpiPn2t1BKbMi5eQp0RCNn630IuV9l1iuhe5Tbp5LZKYmY48/mxusWE1EdWfQtKsNNB8oD0g8i62WKQKEDtG0VYzC5 vaka@MiWiFi-R4CM-srv"
